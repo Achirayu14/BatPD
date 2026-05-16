@@ -73,7 +73,7 @@ if (!is_array($assisting_arr)) jsonErr('assisting json พัง');
 if (empty($items_arr)) jsonErr('ต้องมีข้อหาอย่างน้อย 1');
 
 /* ================== USER ================== */
-$user_name = getDiscordNickname($access_token, $guild_id) ?? 'Unknown';
+$user_name = $_SESSION['user_name'] ?? 'Unknown';
 
 /* ================== WEBHOOK ================== */
 $WEBHOOK_BLACK = 'https://discordapp.com/api/webhooks/1491754152856916039/I86xaT0eFFgOultIefxcLM6cPUgxg9yRPvHXdmAeEVwyO-vschixA6TYrutlDhR1DFzL';
