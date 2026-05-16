@@ -45,10 +45,11 @@ $hof = $conn->query("
 // TOP 10 — เคสรายสัปดาห์
 // ============================================================
 $top_cases = $conn->query("
-    SELECT officer_name AS name, COUNT(*) AS case_count
-    FROM cases
-    WHERE created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY)
-    GROUP BY officer_id, officer_name
+    SELECT u.user_name AS name, COUNT(c.id) AS case_count
+    FROM cases c
+    JOIN users u ON c.officer_id = u.user_id
+    WHERE c.created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY)
+    GROUP BY c.officer_id
     ORDER BY case_count DESC
     LIMIT 10
 ")->fetchAll();
