@@ -11,7 +11,9 @@ try {
         $username, $password,
         [
             PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
-            PDO::MYSQL_ATTR_SSL_CA => true,
+            PDO::MYSQL_ATTR_SSL_CA                 => true,
+            PDO::ATTR_PERSISTENT                   => true,
+            PDO::ATTR_TIMEOUT                      => 5,
         ]
     );
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
