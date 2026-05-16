@@ -583,7 +583,7 @@ if ($duty_row) {
             <!-- Search -->
             <div class="search-box">
                 <i class="fas fa-search"></i>
-                <input type="text" id="item-search" placeholder="ค้นหาชื่อ หรือ พิมตรงของกฏหมาย..." oninput="filterItems()">
+                <input type="text" id="item-search" placeholder="ค้นหาชื่อกฎหมาย หรือ คีย์เวิร์ด..." oninput="filterItems()">
             </div>
             <div class="search-time-hint" id="search-time-hint" style="display:none;"></div>
 
@@ -696,9 +696,9 @@ if ($duty_row) {
 
             <!-- Discord Preview -->
             <div class="sidebar-section">
-                <label>📋 รายงาน Discord (Copy)</label>
+                <label>📋 รายงาน Discord (คัดลอก)</label>
                 <div class="discord-preview" id="discord-preview">กรอกข้อมูลแล้วจะแสดงตัวอย่างที่นี่...</div>
-                <div class="copy-hint">คลิก Ctrl+V แบบรูปแบบปักษิณา (อย่างน้อย 1 รูป)</div>
+                <div class="copy-hint">คลิก Ctrl+V เพื่อวางรูปภาพ (อย่างน้อย 1 รูป)</div>
             </div>
 
             <!-- Officers On Duty -->

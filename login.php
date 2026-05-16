@@ -6,7 +6,7 @@ include 'db.php';
 
 $client_id     = '1490948398889828362';
 $client_secret = 'D_KEkaGklLFjQRWN4DwLzKP9FKpJzHXl';
-$redirect_uri  = 'https://batpd.onrender.com/login.php';
+$redirect_uri  = 'https://c80a966e-c31b-4f1f-979c-caba6d4b8184-00-1ei7y7yia7xmz.pike.replit.dev/login.php';
 $guild_id      = '1462409196602396830';
 
 function apiRequest($url, $post = null, $headers = [], $attempt = 0) {
@@ -104,11 +104,11 @@ if (!isset($_GET['code'])) {
         <div class="subtitle">BTPD DISPATCH SYSTEM V2.0</div>
         
         <a href="<?= htmlspecialchars($auth_url) ?>" class="btn btn-primary" style="width:100%; font-size:16px; padding:18px; background:#5865F2;">
-            <i class="fab fa-discord" style="margin-right:12px;"></i> ACCESS WITH DISCORD
+            <i class="fab fa-discord" style="margin-right:12px;"></i> เข้าสู่ระบบด้วย DISCORD
         </a>
         
-        <div style="margin-top:32px; font-family:'Rajdhani'; font-size:11px; color:var(--text-muted); letter-spacing:1px;">
-            SECURE ACCESS PORTAL — AUTHORIZED PERSONNEL ONLY
+        <div style="margin-top:32px; font-family:'Noto Sans Thai', sans-serif; font-size:11px; color:var(--text-muted); letter-spacing:1px;">
+            พอร์ทัลการเข้าถึงที่ปลอดภัย — สำหรับเจ้าหน้าที่ที่ได้รับอนุญาตเท่านั้น
         </div>
     </div>
 </body>

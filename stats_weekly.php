@@ -87,7 +87,7 @@ $distribution = $incident_types->fetchAll();
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>WEEKLY ANALYTICS — OFFICER TERMINAL</title>
+    <title>ข้อมูลสถิติรายสัปดาห์ — สถานีเจ้าหน้าที่</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -225,31 +225,31 @@ $distribution = $incident_types->fetchAll();
 <body>
 <div class="container">
     <header style="margin-bottom: 40px;">
-        <h1 class="heading-tech" style="font-size: 2.5rem;">WEEKLY PERFORMANCE ANALYTICS</h1>
-        <p style="color:var(--text-muted); font-weight:600;">REPORTING PERIOD: <?= date('d M', strtotime($start_date)) ?> — <?= date('d M Y') ?></p>
+        <h1 class="heading-tech" style="font-size: 2.5rem;">ข้อมูลวิเคราะห์ผลงานรายสัปดาห์</h1>
+        <p style="color:var(--text-muted); font-weight:600;">ช่วงเวลาที่รายงาน: <?= date('d M', strtotime($start_date)) ?> — <?= date('d M Y') ?></p>
     </header>
 
     <!-- UNIT TOTALS -->
     <div class="stats-grid">
         <div class="metric-card">
-            <span class="metric-label">Total Incidents</span>
+            <span class="metric-label">เคสทั้งหมด</span>
             <div class="metric-value"><?= number_format($total_cases) ?></div>
             <div style="font-size: 11px; color: var(--success); font-weight: 700;">
-                <i class="fas fa-arrow-up"></i> SYSTEM ACTIVE
+                <i class="fas fa-arrow-up"></i> ระบบกำลังทำงาน
             </div>
         </div>
         <div class="metric-card">
-            <span class="metric-label">Unit Duty Hours</span>
-            <div class="metric-value"><?= number_format($total_duty_h) ?>H</div>
+            <span class="metric-label">ชั่วโมงปฏิบัติหน้าที่รวม</span>
+            <div class="metric-value"><?= number_format($total_duty_h) ?> ชม.</div>
             <div style="font-size: 11px; color: var(--text-muted); font-weight: 700;">
-                ACROSS ALL ACTIVE PERSONNEL
+                จากเจ้าหน้าที่ที่ปฏิบัติงานทั้งหมด
             </div>
         </div>
         <div class="metric-card">
-            <span class="metric-label">Personnel Impact</span>
+            <span class="metric-label">จำนวนเจ้าหน้าที่ที่มีส่วนร่วม</span>
             <div class="metric-value"><?= count($officer_stats) ?></div>
             <div style="font-size: 11px; color: var(--text-muted); font-weight: 700;">
-                OFFICERS LOGGED ACTIVITY
+                เจ้าหน้าที่ที่มีบันทึกกิจกรรม
             </div>
         </div>
     </div>
@@ -258,8 +258,8 @@ $distribution = $incident_types->fetchAll();
         <!-- LEADERBOARD -->
         <div class="card" style="padding: 0; background: transparent; border: none; box-shadow: none;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                <h2 class="heading-tech">OFFICER LEADERBOARD</h2>
-                <span class="category-tag">TOP PERFORMERS</span>
+                <h2 class="heading-tech">ตารางอันดับเจ้าหน้าที่</h2>
+                <span class="category-tag">ผู้ทำผลงานยอดเยี่ยม</span>
             </div>
             <table class="leaderboard-table">
                 <tbody>
@@ -277,7 +277,7 @@ $distribution = $incident_types->fetchAll();
                             </td>
                             <td class="leaderboard-cell">
                                 <div style="font-weight: 800; font-size: 1.1rem;"><?= htmlspecialchars($name) ?></div>
-                                <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Officer ID: <?= $data['id'] ?></div>
+                                <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">รหัสเจ้าหน้าที่: <?= $data['id'] ?></div>
                                 <div class="progress-bar-bg">
                                     <div class="progress-bar-fill" style="width: <?= $pct ?>%;"></div>
                                 </div>
@@ -287,7 +287,7 @@ $distribution = $incident_types->fetchAll();
                                     <?= $data['total'] ?>
                                 </div>
                                 <div style="font-size: 10px; color: var(--text-muted); font-weight: 700;">
-                                    <?= $data['main'] ?> MAIN | <?= $data['assist'] ?> ASSIST
+                                    <?= $data['main'] ?> หลัก | <?= $data['assist'] ?> ผู้ช่วย
                                 </div>
                             </td>
                         </tr>
@@ -303,7 +303,7 @@ $distribution = $incident_types->fetchAll();
         <!-- DISTRIBUTION -->
         <div>
             <div class="card" style="margin-bottom: 24px;">
-                <h3 class="heading-tech" style="margin-bottom: 20px;">INCIDENT DISTRIBUTION</h3>
+                <h3 class="heading-tech" style="margin-bottom: 20px;">การกระจายประเภทเคส</h3>
                 <?php foreach ($distribution as $item): 
                     $dist_pct = ($total_cases > 0) ? ($item['count'] / $total_cases) * 100 : 0;
                 ?>
@@ -318,19 +318,19 @@ $distribution = $incident_types->fetchAll();
                     </div>
                 <?php endforeach; ?>
                 <?php if(empty($distribution)): ?>
-                    <p style="color:var(--text-muted); font-style: italic;">No incidents logged this period.</p>
+                    <p style="color:var(--text-muted); font-style: italic;">ไม่มีเคสบันทึกในช่วงเวลานี้</p>
                 <?php endif; ?>
             </div>
 
             <div class="card" style="background: var(--primary-dim); border-color: var(--primary);">
-                <h3 class="heading-tech" style="color: var(--primary); margin-bottom: 12px;">TACTICAL SUMMARY</h3>
+                <h3 class="heading-tech" style="color: var(--primary); margin-bottom: 12px;">สรุปทางยุทธวิธี</h3>
                 <p style="font-size: 13px; line-height: 1.5;">
-                    Unit efficiency is currently at <span style="color: var(--primary); font-weight: 800;">STABLE</span> levels. 
-                    Top contributor <span style="font-weight: 800;"><?= !empty($officer_stats) ? array_key_first($officer_stats) : 'N/A' ?></span> 
-                    has secured the primary rank for this cycle.
+                    ประสิทธิภาพของหน่วยงานในขณะนี้อยู่ในระดับ <span style="color: var(--primary); font-weight: 800;">เสถียร</span> 
+                    โดย <span style="font-weight: 800;"><?= !empty($officer_stats) ? array_key_first($officer_stats) : 'N/A' ?></span> 
+                    เป็นผู้ทำผลงานสูงสุดในรอบนี้
                 </p>
                 <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--primary-dim);">
-                    <button class="btn" style="width: 100%;" onclick="window.print()">GENERATE HARDCOPY</button>
+                    <button class="btn" style="width: 100%;" onclick="window.print()">พิมพ์รายงาน</button>
                 </div>
             </div>
         </div>

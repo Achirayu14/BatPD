@@ -22,7 +22,7 @@ $current_duty = $stmt->fetch();
     <div class="duty-container">
         <div class="duty-status">
             <span class="dot <?= $current_duty ? 'online' : '' ?>"></span>
-            <?= $current_duty ? "ON DUTY" : "OFF DUTY" ?>
+            <?= $current_duty ? "ปฏิบัติหน้าที่" : "เลิกปฏิบัติหน้าที่" ?>
         </div>
         <div class="timer-display" id="timer">00:00:00</div>
 
