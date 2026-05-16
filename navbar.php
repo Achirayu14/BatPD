@@ -30,15 +30,15 @@ if (isset($_SESSION['user_id'])) {
     </div>
 
     <div class="nav-center">
-        <a href="index.php" class="<?= ($current_page=='index.php')?'active':'' ?>">DASHBOARD</a>
-        <a href="rules.php" class="<?= ($current_page=='rules.php')?'active':'' ?>">PROTOCOLS</a>
-        <a href="duty.php" class="<?= ($current_page=='duty.php')?'active':'' ?>">ON-DUTY</a>
-        <a href="cases.php" class="<?= ($current_page=='cases.php')?'active':'' ?>">INCIDENTS</a>
-        <a href="stats_weekly.php" class="<?= ($current_page=='stats_weekly.php')?'active':'' ?>">ANALYTICS</a>
+        <a href="index.php" class="<?= ($current_page=='index.php')?'active':'' ?>">หน้าหลัก</a>
+        <a href="rules.php" class="<?= ($current_page=='rules.php')?'active':'' ?>">กฎระเบียบ</a>
+        <a href="duty.php" class="<?= ($current_page=='duty.php')?'active':'' ?>">ลงเวลาทำงาน</a>
+        <a href="cases.php" class="<?= ($current_page=='cases.php')?'active':'' ?>">บันทึกเคส</a>
+        <a href="stats_weekly.php" class="<?= ($current_page=='stats_weekly.php')?'active':'' ?>">สถิติ</a>
     </div>
 
     <div class="nav-right" style="display:flex;align-items:center;gap:12px;">
-        <button onclick="showLogoutModal()" class="btn" style="background:var(--danger);color:#fff;padding:8px 16px;font-size:12px;">EXIT SYSTEM</button>
+        <button onclick="showLogoutModal()" class="btn" style="background:var(--danger);color:#fff;padding:8px 16px;font-size:12px;">ออกจากระบบ</button>
     </div>
 </nav>
 
