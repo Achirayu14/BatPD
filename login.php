@@ -152,3 +152,5 @@ $_SESSION['avatar']    = $current_avatar;
 header('Location: index.php');
 exit();
 ?>
+
+?>
