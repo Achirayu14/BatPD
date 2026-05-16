@@ -6,7 +6,7 @@ include 'db.php';
 
 $client_id     = '1490948398889828362';
 $client_secret = 'D_KEkaGklLFjQRWN4DwLzKP9FKpJzHXl';
-$redirect_uri  = 'https://batpd.onrender.com';
+$redirect_uri  = 'ttps://batpd.onrender.com/login.php';
 $guild_id      = '1462409196602396830';
 
 function apiRequest($url, $post = null, $headers = [], $attempt = 0) {
